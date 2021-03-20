@@ -1,0 +1,87 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@GrayMyers
+GrayMyers
+/
+JavaScript30
+forked from wesbos/JavaScript30
+0
+0
+18.1k
+Code
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+JavaScript30/07 - Array Cardio Day 2/index-START.html
+@samdec11
+samdec11 Clarify questions in exercise 7
+Latest commit 5ec467d on Dec 18, 2016
+ History
+ 5 contributors
+@wesbos@samdec11@fedeguzman@claudiopro@alexbaumgertner
+41 lines (35 sloc)  1.1 KB
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪💪</title>
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // ## Array Cardio Day 2
+
+    const people = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+
+    // Some and Every Checks
+    const current_year = 2021
+    nineteen_or_older = function(person) {
+      return current_year - person.year >= 19;
+    }
+    var some_19 = people.some(nineteen_or_older);
+    var every_19 = people.every(nineteen_or_older);
+    // Array.prototype.some() // is at least one person 19 or older?
+    console.log(some_19)
+    // Array.prototype.every() // is everyone 19 or older?
+    console.log(every_19)
+    // Array.prototype.find()
+
+
+    comment_with_id = comments.find(comment => comment.id === 823423);
+    index_of_commend_with_id = comments.findIndex(comment => comment.id === 823423);
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+    console.log(comment_with_id);
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+    console.log(index_of_commend_with_id);
+    // delete the comment with the ID of 823423
+    comments.splice(index_of_commend_with_id,1);
+    console.log(comments);
+  </script>
+</body>
+</html>
